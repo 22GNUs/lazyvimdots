@@ -1,18 +1,13 @@
 return {
-  -- make tokyonight transparent
-  "folke/tokyonight.nvim",
-  opts = {
-    transparent = true,
-    styles = {
-      sidebars = "transparent",
-      floats = "transparent",
-    },
-  },
   {
     "rcarriga/nvim-notify",
     opts = {
       background_colour = "#000000",
     },
+  },
+  {
+    "folke/noice.nvim",
+    enabled = vim.g.neovide == nil,
   },
   -- Disable default <tab> and <s-tab> behavior in LuaSnip
   {
