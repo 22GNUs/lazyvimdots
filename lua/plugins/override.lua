@@ -88,4 +88,11 @@ return {
       },
     },
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    keys = {
+      -- Add a <C-n> remap to open neotree
+      { "<C-n>", "<leader>fe", desc = "Explorer NeoTree (root dir)", remap = true },
+    },
+  },
 }
