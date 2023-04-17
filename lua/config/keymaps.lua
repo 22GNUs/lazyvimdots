@@ -16,9 +16,9 @@ end
 
 -- buffers
 if Util.has("bufferline.nvim") then
-  map("n", "<Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-  map("n", "<S-Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+  map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+  map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 else
-  map("n", "<Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-  map("n", "<S-Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+  map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+  map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
