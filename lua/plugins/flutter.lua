@@ -8,8 +8,20 @@ return {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
-    config = function()
-      require("flutter-tools").setup({}) -- use defaults
+    opts = {
+      lsp = {
+        color = {
+          enabled = true,
+          background = true,
+          background_color = { r = 19, g = 17, b = 24 },
+          foreground = false,
+          virtual_text = false, -- show the highlight using virtual text
+          virtual_text_str = "■", -- the virtual text character to highlight
+        },
+      },
+    },
+    config = function(_, opts)
+      require("flutter-tools").setup(opts) -- use defaults
     end,
   },
 }
