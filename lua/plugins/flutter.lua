@@ -8,6 +8,9 @@ return {
       "nvim-lua/plenary.nvim",
       "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
+    widget_guides = {
+      enabled = true,
+    },
     opts = {
       lsp = {
         color = {

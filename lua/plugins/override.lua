@@ -9,13 +9,6 @@ return {
     "folke/noice.nvim",
     enabled = vim.g.neovide == nil,
   },
-  -- Disable default <tab> and <s-tab> behavior in LuaSnip
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
