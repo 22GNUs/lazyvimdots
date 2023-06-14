@@ -13,12 +13,12 @@ if g.neovide ~= nil then
 
   -- transparency
   -- have bugs when --multigrid enable, disable for now, see https://github.com/neovide/neovide/issues/720
-  if g.transparency then
-    -- g.transparency = false
-    -- g.neovide_transparency = 0.0
-    -- g.transparency = 0.97
-    -- vim.cmd("let g:neovide_background_color = '" .. "#1E1E2E" .. "'.printf('%x', float2nr(255 * g:transparency))")
-  end
+  -- if g.transparency then
+  -- g.transparency = false
+  -- g.neovide_transparency = 0.0
+  -- g.transparency = 0.97
+  -- vim.cmd("let g:neovide_background_color = '" .. "#1E1E2E" .. "'.printf('%x', float2nr(255 * g:transparency))")
+  -- end
 
   -- blur
   g.neovide_floating_blur_amount_x = 2.0
