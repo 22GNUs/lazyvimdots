@@ -22,3 +22,8 @@ else
   map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
   map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
+
+if vim.g.vscode then
+  map("n", "<S-Tab>", "<cmd>Tabprevious<cr>", { desc = "Prev tab" })
+  map("n", "<Tab>", "<cmd>Tabnext<cr>", { desc = "Next tab" })
+end
