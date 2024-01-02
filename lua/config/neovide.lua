@@ -1,5 +1,8 @@
 local g = vim.g
 local o = vim.opt
+local alpha = function()
+  return string.format("%x", math.floor((255 * vim.g.transparency) or 0.8))
+end
 if g.neovide ~= nil then
   o.guifont = { "FantasqueSansM Nerd Font", ":h18" }
   -- g.neovide_fullscreen = true
@@ -12,17 +15,19 @@ if g.neovide ~= nil then
   g.neovide_padding_top = 48
 
   -- transparency
-  -- have bugs when --multigrid enable, disable for now, see https://github.com/neovide/neovide/issues/720
-  -- if g.transparency then
-  -- g.transparency = false
-  -- g.neovide_transparency = 0.0
-  -- g.transparency = 0.97
-  -- vim.cmd("let g:neovide_background_color = '" .. "#1E1E2E" .. "'.printf('%x', float2nr(255 * g:transparency))")
-  -- end
+  if g.transparency then
+    g.transparency = false
+    --   g.neovide_transparency = 0.0
+    --   g.neovide_transparency_point = 0.8
+    --   g.transparency = 0.97
+    --   g.neovide_background_color = "#1E1E2E" .. alpha()
+    --   g.winblend = 0
+  end
 
   -- blur
   g.neovide_floating_blur_amount_x = 2.0
   g.neovide_floating_blur_amount_y = 2.0
+
   -- vfx mode
   -- g.neovide_cursor_vfx_mode = "ripple"
   g.neovide_cursor_vfx_mode = "railgun"

@@ -1,4 +1,4 @@
-local transparency = vim.g.neovide == nil
+local transparency = vim.g.transparency
 return {
   {
     "folke/tokyonight.nvim",
