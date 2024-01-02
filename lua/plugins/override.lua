@@ -7,7 +7,6 @@ return {
   },
   {
     "folke/noice.nvim",
-    enabled = vim.g.neovide == nil,
   },
   -- add more treesitter parsers
   {
