@@ -49,6 +49,18 @@ return {
   {
     "mfussenegger/nvim-jdtls",
     opts = {
+      jdtls = {
+        handlers = {
+          -- see: https://www.reddit.com/r/neovim/comments/1172p03/jdtls_spams_messages_in_lazyvim/
+          -- disable progress update
+          -- ["language/status"] = function(_, result)
+          -- print(result)
+          -- end,
+          ["$/progress"] = function(_, result, ctx)
+            -- disable progress updates.
+          end,
+        },
+      },
       root_dir = function(_)
         -- override the root_dir look up to support multi module project
         return require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew" })
