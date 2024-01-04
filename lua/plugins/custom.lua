@@ -12,6 +12,9 @@ return {
   },
   {
     "folke/zen-mode.nvim",
+    lazy = true,
+    -- not work in neovide for now
+    enabled = not vim.g.neovide,
     keys = {
       -- Add a <C-n> remap to open neotree
       {

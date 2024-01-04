@@ -16,12 +16,12 @@ if g.neovide ~= nil then
 
   -- transparency
   if g.transparency then
-    g.transparency = false
-    --   g.neovide_transparency = 0.0
-    --   g.neovide_transparency_point = 0.8
-    --   g.transparency = 0.97
-    --   g.neovide_background_color = "#1E1E2E" .. alpha()
-    --   g.winblend = 0
+    -- g.transparency = false
+    g.neovide_transparency = 0.0
+    g.neovide_transparency_point = 0.8
+    g.transparency = 0.95
+    g.neovide_background_color = "#1E1E2E" .. alpha()
+    g.winblend = 0
   end
 
   -- blur
