@@ -3,4 +3,5 @@
 -- Add any additional options here
 
 vim.g.transparency = true
+vim.g.autoformat = false
 require("config.neovide")
