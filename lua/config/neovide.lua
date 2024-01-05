@@ -25,8 +25,8 @@ if g.neovide ~= nil then
   end
 
   -- blur
-  g.neovide_floating_blur_amount_x = 2.0
-  g.neovide_floating_blur_amount_y = 2.0
+  g.neovide_floating_blur_amount_x = 12.0
+  g.neovide_floating_blur_amount_y = 12.0
 
   -- vfx mode
   -- g.neovide_cursor_vfx_mode = "ripple"
