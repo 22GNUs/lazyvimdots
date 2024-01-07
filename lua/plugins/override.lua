@@ -7,6 +7,13 @@ return {
   },
   {
     "folke/noice.nvim",
+    opts = {
+      lsp = {
+        progress = {
+          enabled = false,
+        }
+      }
+    }
   },
   -- add more treesitter parsers
   {
