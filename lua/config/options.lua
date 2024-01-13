@@ -3,4 +3,5 @@
 -- Add any additional options here
 
 vim.g.transparency = true
+vim.g.tokyonight_dark_float = false
 require("config.neovide")

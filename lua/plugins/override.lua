@@ -11,9 +11,9 @@ return {
       lsp = {
         progress = {
           enabled = false,
-        }
-      }
-    }
+        },
+      },
+    },
   },
   -- add more treesitter parsers
   {
@@ -104,6 +104,14 @@ return {
         ["google-java-format"] = {
           prepend_args = { "--aosp" },
         },
+      },
+    },
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        winblend = vim.g.winblend,
       },
     },
   },
