@@ -16,7 +16,7 @@ if g.neovide ~= nil then
 
   -- transparency
   if g.transparency then
-    -- g.transparency = false
+    g.transparency = true
     g.neovide_transparency = 0.0
     g.neovide_transparency_point = 0.8
     g.transparency = 0.95
@@ -25,8 +25,8 @@ if g.neovide ~= nil then
   end
 
   -- blur
-  g.neovide_floating_blur_amount_x = 12.0
-  g.neovide_floating_blur_amount_y = 12.0
+  g.neovide_floating_blur_amount_x = 10.0
+  g.neovide_floating_blur_amount_y = 10.0
 
   -- vfx mode
   -- g.neovide_cursor_vfx_mode = "ripple"
