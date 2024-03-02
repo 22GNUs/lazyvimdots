@@ -2,7 +2,6 @@ return {
   -- add neoscroll
   {
     "karb94/neoscroll.nvim",
-    lazy = true,
     enabled = not vim.g.neovide,
     -- load before BufRead, avoid loading impact on performance
     event = "VeryLazy",
@@ -12,9 +11,9 @@ return {
   },
   {
     "folke/zen-mode.nvim",
-    lazy = true,
     -- not work in neovide for now
     enabled = not vim.g.neovide,
+    event = "VeryLazy",
     keys = {
       -- Add a <C-n> remap to open neotree
       {
@@ -29,5 +28,18 @@ return {
         desc = "Toggle Zen Mode",
       },
     },
+  },
+  {
+    "NvChad/nvim-colorizer.lua",
+    event = "BufRead",
+    ft = { "html", "css", "sass" },
+    config = function()
+      require("colorizer").setup({
+        user_default_options = {
+          css = true,
+          tailwind = true,
+        },
+      })
+    end,
   },
 }
