@@ -31,7 +31,6 @@ return {
   },
   {
     "NvChad/nvim-colorizer.lua",
-    event = "BufRead",
     ft = { "html", "css", "sass" },
     config = function()
       require("colorizer").setup({
