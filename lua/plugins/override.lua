@@ -6,6 +6,16 @@ return {
     },
   },
   {
+    "rcarriga/nvim-notify",
+    opts = {
+      stages = "static",
+      render = "compact",
+      fps = 5,
+      level = 1,
+      timeout = 2000,
+    },
+  },
+  {
     "folke/noice.nvim",
     opts = {
       lsp = {
