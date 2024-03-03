@@ -3,11 +3,6 @@ return {
     "rcarriga/nvim-notify",
     opts = {
       background_colour = "#000000",
-    },
-  },
-  {
-    "rcarriga/nvim-notify",
-    opts = {
       stages = "static",
       render = "compact",
       fps = 5,
@@ -52,6 +47,19 @@ return {
   {
     "nvim-neo-tree/neo-tree.nvim",
     opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+          hide_by_name = {
+            ".github",
+            ".gitignore",
+            "package-lock.json",
+          },
+          never_show = { ".git", "node_modules", ".next" },
+        },
+      },
       window = {
         mappings = {
           ["o"] = "open",
