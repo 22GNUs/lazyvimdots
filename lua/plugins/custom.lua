@@ -29,16 +29,4 @@ return {
       },
     },
   },
-  {
-    "NvChad/nvim-colorizer.lua",
-    ft = { "html", "css", "sass", "typescriptreact", "javascriptreact" },
-    config = function()
-      require("colorizer").setup({
-        user_default_options = {
-          css = true,
-          tailwind = true,
-        },
-      })
-    end,
-  },
 }
