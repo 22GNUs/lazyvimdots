@@ -27,3 +27,15 @@ if vim.g.vscode then
   map("n", "<S-Tab>", "<cmd>Tabprevious<cr>", { desc = "Prev tab" })
   map("n", "<Tab>", "<cmd>Tabnext<cr>", { desc = "Next tab" })
 end
+
+-- floating terminal
+local lazyterm = function()
+  LazyVim.terminal(nil, { cwd = LazyVim.root(), border = "single" })
+end
+
+map("n", "<leader>ft", lazyterm, { desc = "Terminal (Root Dir)" })
+map("n", "<leader>fT", function()
+  LazyVim.terminal()
+end, { desc = "Terminal (cwd)" })
+map("n", "<c-/>", lazyterm, { desc = "Terminal (Root Dir)" })
+map("n", "<c-_>", lazyterm, { desc = "which_key_ignore" })
