@@ -14,6 +14,10 @@ local function map(mode, lhs, rhs, opts)
   end
 end
 
+-- bind <C-c> to <ESC> in insert mode
+vim.keymap.set("i", "jk", "<ESC>", { silent = true })
+vim.keymap.set("t", "jk", "<C-\\><C-n>", { silent = true })
+
 -- buffers
 if Util.has("bufferline.nvim") then
   map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
