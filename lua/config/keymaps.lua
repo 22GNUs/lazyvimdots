@@ -16,8 +16,10 @@ end
 
 -- bind <C-c> to <ESC> in insert mode
 vim.keymap.set("i", "jk", "<ESC>", { silent = true })
-vim.keymap.set("i", "<C-c>", "<Nop>", { silent = true })
+vim.keymap.set("i", "jj", "<ESC>", { silent = true })
 vim.keymap.set("t", "jk", "<C-\\><C-n>", { silent = true })
+vim.keymap.set("t", "jj", "<C-\\><C-n>", { silent = true })
+vim.keymap.set("i", "<C-c>", "<Nop>", { silent = true })
 
 -- buffers
 if Util.has("bufferline.nvim") then
