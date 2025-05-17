@@ -3,7 +3,7 @@
 -- Add any additional keymaps here
 
 local Util = require("lazyvim.util")
-local function map(mode, lhs, rhs, opts)
+local function keymap(mode, lhs, rhs, opts)
   local keys = require("lazy.core.handler").handlers.keys
   ---@cast keys LazyKeysHandler
   -- do not create the keymap if a lazy keys handler exists
@@ -15,22 +15,46 @@ local function map(mode, lhs, rhs, opts)
 end
 
 -- bind <C-c> to <ESC> in insert mode
-vim.keymap.set("i", "jk", "<ESC>", { silent = true })
-vim.keymap.set("i", "jj", "<ESC>", { silent = true })
-vim.keymap.set("t", "jk", "<C-\\><C-n>", { silent = true })
-vim.keymap.set("t", "jj", "<C-\\><C-n>", { silent = true })
-vim.keymap.set("i", "<C-c>", "<Nop>", { silent = true })
+keymap("i", "jk", "<ESC>", { silent = true })
+keymap("i", "jj", "<ESC>", { silent = true })
+keymap("t", "jk", "<C-\\><C-n>", { silent = true })
+keymap("t", "jj", "<C-\\><C-n>", { silent = true })
+keymap("i", "<C-c>", "<Nop>", { silent = true })
 
 -- buffers
 if Util.has("bufferline.nvim") then
-  map("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-  map("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+  keymap("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+  keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 else
-  map("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-  map("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+  keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+  keymap("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
 
 if vim.g.vscode then
-  map("n", "<S-Tab>", "<cmd>Tabprevious<cr>", { desc = "Prev tab" })
-  map("n", "<Tab>", "<cmd>Tabnext<cr>", { desc = "Next tab" })
+  -- This block contains keymappings that are specific to running Neovim within the
+  -- VSCode Neovim extension (https://github.com/vscode-neovim/vscode-neovim).
+  -- It uses a helper function `callAction` to trigger VS Code's built-in commands.
+
+  local vscode = require("vscode")
+  local function callAction(action)
+    return function()
+      vscode.action(action)
+    end
+  end
+
+  keymap("n", "<S-Tab>", "<cmd>Tabprevious<cr>", { desc = "Prev VSCode Tab" })
+  keymap("n", "<Tab>", "<cmd>Tabnext<cr>", { desc = "Next VSCode Tab" })
+  keymap(
+    { "n", "v" },
+    "<C-/>",
+    callAction("workbench.action.terminal.toggleTerminal"),
+    { desc = "Toggle VSCode Terminal" }
+  )
+  keymap({ "n", "v" }, "<leader>e", callAction("workbench.view.explorer"), { desc = "Toggle VSCode Explorer" })
+  keymap({ "n", "v" }, "<leader>ca", callAction("editor.action.quickFix"), { desc = "VSCode Quick Fix / Code Actions" })
+  keymap({ "n", "x" }, "<leader>cr", callAction("editor.action.rename"), { desc = "VSCode Rename Symbol" })
+  keymap({ "n", "v" }, "<leader>bp", callAction("workbench.action.pinEditor"), { desc = "Pin VSCode Editor Tab" })
+  keymap({ "n", "v" }, "<leader>bP", callAction("workbench.action.unpinEditor"), { desc = "Unpin VSCode Editor Tab" })
+  keymap({ "n", "v" }, "<leader>ff", callAction("workbench.action.quickOpen"), { desc = "VSCode Search" })
+  keymap("n", "gi", callAction("editor.action.revealImplementation"), { desc = "Go to Implementation (VSCode)" })
 end
