@@ -50,6 +50,7 @@ if vim.g.vscode then
     callAction("workbench.action.terminal.toggleTerminal"),
     { desc = "Toggle VSCode Terminal" }
   )
+
   keymap({ "n", "v" }, "<leader>e", callAction("workbench.view.explorer"), { desc = "Toggle VSCode Explorer" })
   keymap({ "n", "v" }, "<leader>ca", callAction("editor.action.quickFix"), { desc = "VSCode Quick Fix / Code Actions" })
   keymap({ "n", "x" }, "<leader>cr", callAction("editor.action.rename"), { desc = "VSCode Rename Symbol" })
@@ -57,5 +58,8 @@ if vim.g.vscode then
   keymap({ "n", "v" }, "<leader>bP", callAction("workbench.action.unpinEditor"), { desc = "Unpin VSCode Editor Tab" })
   keymap({ "n", "v" }, "<leader>ff", callAction("workbench.action.quickOpen"), { desc = "VSCode Search" })
   keymap({ "n", "v" }, "<leader>sw", callAction("workbench.action.quickTextSearch"), { desc = "VSCode Quick Search" })
+  keymap({ "n", "v" }, "<leader>gg", callAction("workbench.view.scm"), { desc = "Show Changes" })
+  keymap({ "n", "v" }, "]e", callAction("editor.action.marker.next"), { desc = "Go to next problem" })
+  keymap({ "n", "v" }, "[e", callAction("editor.action.marker.prev"), { desc = "Go to previous problem" })
   keymap({ "n", "v" }, "gI", callAction("editor.action.goToImplementation"), { desc = "Go to Implementation (VSCode)" })
 end
