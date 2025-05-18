@@ -56,5 +56,6 @@ if vim.g.vscode then
   keymap({ "n", "v" }, "<leader>bp", callAction("workbench.action.pinEditor"), { desc = "Pin VSCode Editor Tab" })
   keymap({ "n", "v" }, "<leader>bP", callAction("workbench.action.unpinEditor"), { desc = "Unpin VSCode Editor Tab" })
   keymap({ "n", "v" }, "<leader>ff", callAction("workbench.action.quickOpen"), { desc = "VSCode Search" })
-  keymap("n", "gi", callAction("editor.action.revealImplementation"), { desc = "Go to Implementation (VSCode)" })
+  keymap({ "n", "v" }, "<leader>sw", callAction("workbench.action.quickTextSearch"), { dess = "VSCode Search Word" })
+  keymap({ "n", "v" }, "gI", callAction("editor.action.goToImplementation"), { desc = "Go to Implementation (VSCode)" })
 end
