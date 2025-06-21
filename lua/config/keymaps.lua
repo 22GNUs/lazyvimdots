@@ -23,11 +23,11 @@ keymap("i", "<C-c>", "<Nop>", { silent = true })
 
 -- buffers
 if Util.has("bufferline.nvim") then
-  keymap("n", "<S-Tab>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
-  keymap("n", "<Tab>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
+  keymap("n", "<H>", "<cmd>BufferLineCyclePrev<cr>", { desc = "Prev buffer" })
+  keymap("n", "<L>", "<cmd>BufferLineCycleNext<cr>", { desc = "Next buffer" })
 else
-  keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
-  keymap("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+  keymap("n", "<H>", "<cmd>bprevious<cr>", { desc = "Prev buffer" })
+  keymap("n", "<L>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 end
 
 if vim.g.vscode then
@@ -42,8 +42,8 @@ if vim.g.vscode then
     end
   end
 
-  keymap("n", "<S-Tab>", "<cmd>Tabprevious<cr>", { desc = "Prev VSCode Tab" })
-  keymap("n", "<Tab>", "<cmd>Tabnext<cr>", { desc = "Next VSCode Tab" })
+  keymap("n", "<H>", "<cmd>Tabprevious<cr>", { desc = "Prev VSCode Tab" })
+  keymap("n", "<L>", "<cmd>Tabnext<cr>", { desc = "Next VSCode Tab" })
   keymap(
     { "n", "v" },
     "<C-/>",
