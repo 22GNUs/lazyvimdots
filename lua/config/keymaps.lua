@@ -63,4 +63,5 @@ if vim.g.vscode then
   keymap({ "n", "v" }, "]e", callAction("editor.action.marker.next"), { desc = "Go to next problem" })
   keymap({ "n", "v" }, "[e", callAction("editor.action.marker.prev"), { desc = "Go to previous problem" })
   keymap({ "n", "v" }, "gI", callAction("editor.action.goToImplementation"), { desc = "Go to Implementation (VSCode)" })
+  keymap({ "n", "v" }, "gD", callAction("editor.action.revealDeclaration"), { desc = "Go to declaration (VSCode)" })
 end
